@@ -34,22 +34,30 @@ function playRound(computerselection, humanselection){
     }
     if(computerselection === "scissors" && humanselection === "rock"){
         console.log("rock beats scissors, Player wins!!");
+        humanScore++;
     }
     if(computerselection === "scissors" && humanselection === "paper"){
-        console.log("Scissors beats pape, Computer wins!!");
+        console.log("Scissors beats paper, Computer wins!!");
+        compterScore++;
     }
     if(computerselection === "paper" && humanselection === "scissors"){
         console.log("Scissors beats paper, Player wins!!");
+        humanScore++;
     }
     if(computerselection === "paper" && humanselection === "rock"){
         console.log("Paper beats rock, Computer wins!!");
+        compterScore++;
     }
     if(computerselection === "rock" && humanselection === "scissors"){
         console.log("Rock beats scissors, Computer wins!!");
+        compterScore++;
     }
     if(computerselection === "rock" && humanselection === "paper"){
         console.log("Paper beats rock, Player wins!!");
+        humanScore++;
     }
+    console.log(humanScore);
+    console.log(compterScore);
 }
 const humanselection = getHumanChoice();
 const computerselection = getComputerChoice();

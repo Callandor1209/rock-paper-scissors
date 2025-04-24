@@ -89,7 +89,7 @@ function playGame(){
     var humanselection = getHumanChoice();
     var computerselection = getComputerChoice();
     playRound(computerselection , humanselection);
-    if(humanScore   computerScore){
+    if(humanScore >  computerScore){
         console.log("Player wins! Congratulations!");
 
     }

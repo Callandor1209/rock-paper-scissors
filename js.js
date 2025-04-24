@@ -56,9 +56,23 @@ function playRound(computerselection, humanselection){
         console.log("Paper beats rock, Player wins!!");
         humanScore++;
     }
-    console.log(humanScore);
-    console.log(compterScore);
+    console.log("Your score: " + humanScore);
+    console.log("Your score: " + compterScore);
 }
 const humanselection = getHumanChoice();
 const computerselection = getComputerChoice();
-playRound(computerselection , humanselection);
+function playGame(){
+    playRound(computerselection , humanselection);
+    playRound(computerselection , humanselection);
+    playRound(computerselection , humanselection);
+    playRound(computerselection , humanselection);
+    playRound(computerselection , humanselection);
+    if(humanScore>compterScore){
+        console.log("Player wins! Congratulations!");
+
+    }
+    if(computerScore>humanScore){
+        console.log("Computer wins! womp womp you suck");
+    }
+    playGame();
+}

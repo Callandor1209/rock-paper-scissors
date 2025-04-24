@@ -1,7 +1,5 @@
 var humanScore = 0;
 var compterScore = 0;
-const humanselection = getHumanChoice();
-const computerselection = getComputerChoice();
 playGame();
 
 function getComputerChoice(){
@@ -68,10 +66,20 @@ function playRound(computerselection, humanselection){
 
 
 function playGame(){
+    var humanselection = getHumanChoice();
+    var computerselection = getComputerChoice();
     playRound(computerselection , humanselection);
+    var humanselection = getHumanChoice();
+    var computerselection = getComputerChoice();
     playRound(computerselection , humanselection);
+    var humanselection = getHumanChoice();
+    var computerselection = getComputerChoice();
     playRound(computerselection , humanselection);
+    var humanselection = getHumanChoice();
+    var computerselection = getComputerChoice();
     playRound(computerselection , humanselection);
+    var humanselection = getHumanChoice();
+    var computerselection = getComputerChoice();
     playRound(computerselection , humanselection);
     if(humanScore>compterScore){
         console.log("Player wins! Congratulations!");

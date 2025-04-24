@@ -1,4 +1,4 @@
-console.log("Hello World!");
+
 var humanScore = 0;
 var compterScore = 0;
 function getComputerChoice(){

@@ -3,7 +3,6 @@ var humanScore = 0;
 var compterScore = 0;
 function getComputerChoice(){
     x = Math.random();
-    console.log(x)
     if(x>0.66){
        var computerChoice="paper";
     }
@@ -13,13 +12,13 @@ function getComputerChoice(){
     if(x<=0.33){
         var computerChoice="scissors";
     }
-    console.log(computerChoice);
+    console.log("Computer chose: " + computerChoice);
     return computerChoice;
 }
 function getHumanChoice(){
    var humanChoice = prompt("Please input your decision");
      var humanChoice = humanChoice.toLowerCase();
-    console.log(humanChoice);
+    console.log("Human chose: " + humanChoice);
     return humanChoice;
 }
 function playRound(computerselection, humanselection){

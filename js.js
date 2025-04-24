@@ -1,6 +1,7 @@
-
 var humanScore = 0;
 var compterScore = 0;
+
+
 function getComputerChoice(){
     x = Math.random();
     if(x>0.66){
@@ -15,12 +16,16 @@ function getComputerChoice(){
     console.log("Computer chose: " + computerChoice);
     return computerChoice;
 }
+
+
 function getHumanChoice(){
    var humanChoice = prompt("Please input your decision");
      var humanChoice = humanChoice.toLowerCase();
     console.log("Human chose: " + humanChoice);
     return humanChoice;
 }
+
+
 function playRound(computerselection, humanselection){
     if(computerselection === "paper" && humanselection=== "paper"){
         console.log("Paper vs paper, it's a tie!");
@@ -58,8 +63,12 @@ function playRound(computerselection, humanselection){
     console.log("Your score: " + humanScore);
     console.log("Your score: " + compterScore);
 }
+
+
 const humanselection = getHumanChoice();
 const computerselection = getComputerChoice();
+
+
 function playGame(){
     playRound(computerselection , humanselection);
     playRound(computerselection , humanselection);
@@ -73,5 +82,7 @@ function playGame(){
     if(computerScore>humanScore){
         console.log("Computer wins! womp womp you suck");
     }
+
+
     playGame();
 }

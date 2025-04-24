@@ -1,6 +1,8 @@
 var humanScore = 0;
 var compterScore = 0;
-
+const humanselection = getHumanChoice();
+const computerselection = getComputerChoice();
+playGame();
 
 function getComputerChoice(){
     x = Math.random();
@@ -65,10 +67,6 @@ function playRound(computerselection, humanselection){
 }
 
 
-const humanselection = getHumanChoice();
-const computerselection = getComputerChoice();
-
-
 function playGame(){
     playRound(computerselection , humanselection);
     playRound(computerselection , humanselection);
@@ -82,7 +80,4 @@ function playGame(){
     if(computerScore>humanScore){
         console.log("Computer wins! womp womp you suck");
     }
-
-
-    playGame();
 }

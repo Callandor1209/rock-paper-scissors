@@ -61,7 +61,7 @@ function playRound(computerselection, humanselection){
         humanScore++;
     }
     console.log("Your score: " + humanScore);
-    console.log("Your score: " + compterScore);
+    console.log("Computer score: " + compterScore);
 }
 
 

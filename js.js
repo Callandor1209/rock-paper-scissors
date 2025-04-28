@@ -26,7 +26,7 @@ function getHumanChoice(){
 
 
 function determineOutcome(computerselection, humanselection){
-    else if(computerselection === "paper" && humanselection=== "paper"){
+     if(computerselection === "paper" && humanselection=== "paper"){
         console.log("Paper vs paper, it's a tie!");
     }
     else if(computerselection === "rock" && humanselection === "rock"){
@@ -59,7 +59,7 @@ function determineOutcome(computerselection, humanselection){
         console.log("Paper beats rock, Player wins!!");
         humanScore++;
     }
-    else if {
+    else if (humanselection != "rock" && humanselection != "paper" && humanselection != "scissors"){
         console.log("Thats not an option, try again");
         playRound();
     }

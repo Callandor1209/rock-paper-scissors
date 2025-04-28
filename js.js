@@ -3,6 +3,7 @@ var computerScore = 0;
 
 function getComputerChoice(){
     x = Math.random();
+    addToConsole(x);
     if(x>0.66){
        var computerChoice="paper";
     }
@@ -93,5 +94,12 @@ function playRound(){
     determineOutcome(computerselection , humanselection);
 
 }
+ 
+function addToConsole(y){
+    toString(y);
+    var console = console + y;
+}
 const btn = document.querySelector("#btn");
 btn.addEventListener("click", playGame);
+const cnsl = document.querySelector("#cnsl");
+var console;

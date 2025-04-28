@@ -26,7 +26,7 @@ function getHumanChoice(){
 }
 
 
-function playRound(computerselection, humanselection){
+function determineOutcome(computerselection, humanselection){
     if(computerselection === "paper" && humanselection=== "paper"){
         console.log("Paper vs paper, it's a tie!");
     }
@@ -60,27 +60,21 @@ function playRound(computerselection, humanselection){
         console.log("Paper beats rock, Player wins!!");
         humanScore++;
     }
+    else{
+        console.log("Thats not an option, try again");
+        playRound();
+    }
     console.log("Your score: " + humanScore);
     console.log("Computer score: " +    computerScore);
 }
 
 
 function playGame(){
-    var humanselection = getHumanChoice();
-    var computerselection = getComputerChoice();
-    playRound(computerselection , humanselection);
-    var humanselection = getHumanChoice();
-    var computerselection = getComputerChoice();
-    playRound(computerselection , humanselection);
-    var humanselection = getHumanChoice();
-    var computerselection = getComputerChoice();
-    playRound(computerselection , humanselection);
-    var humanselection = getHumanChoice();
-    var computerselection = getComputerChoice();
-    playRound(computerselection , humanselection);
-    var humanselection = getHumanChoice();
-    var computerselection = getComputerChoice();
-    playRound(computerselection , humanselection);
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
     if(humanScore >  computerScore){
         console.log("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
 
@@ -93,3 +87,12 @@ function playGame(){
         console.log("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
     }
 }
+
+function playRound(){
+    var humanselection = getHumanChoice();
+    var computerselection = getComputerChoice();
+    determineOutcome(computerselection , humanselection);
+
+}
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", playGame);

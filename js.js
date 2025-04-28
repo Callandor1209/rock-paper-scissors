@@ -82,10 +82,14 @@ function playGame(){
     var computerselection = getComputerChoice();
     playRound(computerselection , humanselection);
     if(humanScore >  computerScore){
-        console.log("Player wins! Congratulations!");
+        console.log("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
 
     }
     if(computerScore>humanScore){
         console.log("Computer wins! womp womp you suck");
+    
+    }
+    if (computerScore === humanScore){
+        console.log("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
     }
 }

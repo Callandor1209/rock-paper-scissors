@@ -1,6 +1,5 @@
 var humanScore = 0;
 var computerScore = 0;
-playGame();
 
 function getComputerChoice(){
     x = Math.random();

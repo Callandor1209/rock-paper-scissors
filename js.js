@@ -98,6 +98,8 @@ function playRound(){
 function addToConsole(y){
     toString(y);
     var console = console + y;
+    toString(console);
+    cnsl.textcontent = console
 }
 const btn = document.querySelector("#btn");
 btn.addEventListener("click", playGame);

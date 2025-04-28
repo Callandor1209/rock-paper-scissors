@@ -29,21 +29,21 @@ function determineOutcome(computerselection, humanselection){
     if(computerselection === "paper" && humanselection=== "paper"){
         console.log("Paper vs paper, it's a tie!");
     }
-    if(computerselection === "rock" && humanselection === "rock"){
+    else if(computerselection === "rock" && humanselection === "rock"){
         console.log("Rock vs rock, it's a tie!");
     }
-    if(computerselection === "scissors" && humanselection === "scissors"){
+    else if(computerselection === "scissors" && humanselection === "scissors"){
         console.log("Scissors vs scissors, it's a tie!");
     }
-    if(computerselection === "scissors" && humanselection === "rock"){
+    else if(computerselection === "scissors" && humanselection === "rock"){
         console.log("rock beats scissors, Player wins!!");
         humanScore++;
     }
-    if(computerselection === "scissors" && humanselection === "paper"){
+    else if(computerselection === "scissors" && humanselection === "paper"){
         console.log("Scissors beats paper, Computer wins!!");
         computerScore++;
     }
-    if(computerselection === "paper" && humanselection === "scissors"){
+    else if(computerselection === "paper" && humanselection === "scissors"){
         console.log("Scissors beats paper, Player wins!!");
         humanScore++;
     }
@@ -51,15 +51,15 @@ function determineOutcome(computerselection, humanselection){
         console.log("Paper beats rock, Computer wins!!");
         computerScore++;
     }
-    if(computerselection === "rock" && humanselection === "scissors"){
+    else if(computerselection === "rock" && humanselection === "scissors"){
         console.log("Rock beats scissors, Computer wins!!");
         computerScore++;
     }
-    if(computerselection === "rock" && humanselection === "paper"){
+    else if(computerselection === "rock" && humanselection === "paper"){
         console.log("Paper beats rock, Player wins!!");
         humanScore++;
     }
-    else{
+    else {
         console.log("Thats not an option, try again");
         playRound();
     }

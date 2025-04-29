@@ -6,7 +6,7 @@ var content;
 const btn = document.querySelector("#btn");
 btn.addEventListener("click", playRound);
 const reset = document.querySelector("#reset");
-reset.addEventListener("click",reset);
+reset.addEventListener("click",reset1);
 
 function getComputerChoice(){
     x = Math.random();
@@ -100,9 +100,10 @@ function playRound(){
     }
 
 }
-function reset(){
+function reset1(){
     const output = document.getElementById("output");
-    output.textContent = " ";
+    output.textContent.reset();
+    var i = 1;
 }
 function addToConsole(message){
     const output = document.getElementById("output");

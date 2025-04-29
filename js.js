@@ -7,6 +7,8 @@ const btn = document.querySelector("#btn");
 btn.addEventListener("click", playRound);
 const reset = document.querySelector("#reset");
 reset.addEventListener("click",reset1);
+const darkm = document.querySelector("#drkmode");
+darkm.addEventListener("click" , darkMode);
 
 function getComputerChoice(){
     x = Math.random();
@@ -106,4 +108,8 @@ function reset1(){
 function addToConsole(message){
     const output = document.getElementById("output");
     output.textContent += message + '\n';
+}
+function darkMode(){
+    var element = document.body;
+  element.classList.toggle("dark-mode");
 }

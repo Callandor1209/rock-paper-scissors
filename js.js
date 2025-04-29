@@ -115,8 +115,7 @@ function playRound(){
 
 }
  
-function addToConsole(y){
-    toString(y);
-    div.textContent = y + content;
-    var content = div.textContent;
+function addToConsole(message){
+    const output = document.getElementById("output");
+    output.textContent += message + '\n';
 }

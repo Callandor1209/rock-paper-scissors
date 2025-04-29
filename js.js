@@ -4,7 +4,7 @@ var i = 1;
 
 function getComputerChoice(){
     x = Math.random();
-    addToConsole(x);
+    const node = document.createTextNode(x);
     if(x>0.66){
        var computerChoice="paper";
     }
@@ -112,12 +112,12 @@ function playRound(){
 
 }
  
-function addToConsole(y){
+
 const para = document.createElement("p");
-const node = document.createTextNode(y);
+
 para.appendChild(node);
 const element = document.getElementById("div1");
 element.appendChild(para);
-}
+
 const btn = document.querySelector("#btn");
 btn.addEventListener("click", playRound);

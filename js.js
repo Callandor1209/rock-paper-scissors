@@ -101,8 +101,7 @@ function playRound(){
 
 }
 function reset1(){
-    const output = document.getElementById("output");
-    output.textContent.reset();
+    const output = document.getElementById("output").reset();
     var i = 1;
 }
 function addToConsole(message){

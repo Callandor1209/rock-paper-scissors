@@ -5,6 +5,8 @@ const div = document.createElement("div")
 var content;
 const btn = document.querySelector("#btn");
 btn.addEventListener("click", playRound);
+const reset = document.querySelector("#reset");
+reset.addEventListener("click",reset);
 
 function getComputerChoice(){
     x = Math.random();
@@ -72,26 +74,6 @@ function determineOutcome(computerselection, humanselection){
     addToConsole("Computer score: " +    computerScore);
 }
 
-
-/*function playGame(){
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    if(humanScore >  computerScore){
-        addToConsole("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
-
-    }
-    if(computerScore>humanScore){
-        addToConsole("Computer wins! womp womp you suck");
-    
-    }
-    if (computerScore === humanScore){
-        addToConsole("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
-    }
-}
-*/
 function playRound(){
     if(i <= 5){
     var humanselection = getHumanChoice();
@@ -99,7 +81,7 @@ function playRound(){
     determineOutcome(computerselection , humanselection);
     i++;
     }
-    else{
+    else if ( i === 6){
         if(humanScore >  computerScore){
             addToConsole("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
     
@@ -111,10 +93,17 @@ function playRound(){
         if (computerScore === humanScore){
             addToConsole("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
         }
+        i++;
+    }
+    else if (i > 6){
+        addToConsole("Please use the reset button to play again");
     }
 
 }
- 
+function reset(){
+    const output = document.getElementById("output");
+    output.textContent = " ";
+}
 function addToConsole(message){
     const output = document.getElementById("output");
     output.textContent += message + '\n';

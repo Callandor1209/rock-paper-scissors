@@ -8,7 +8,6 @@ btn.addEventListener("click", playRound);
 
 function getComputerChoice(){
     x = Math.random();
-    addToConsole(x);
     if(x>0.66){
        var computerChoice="paper";
     }

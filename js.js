@@ -1,10 +1,13 @@
 var humanScore = 0;
 var computerScore = 0;
 var i = 1;
+const div = document.createElement("div")
+var content;
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", playRound);
 
 function getComputerChoice(){
     x = Math.random();
-    const node = document.createTextNode(x);
     if(x>0.66){
        var computerChoice="paper";
     }
@@ -112,12 +115,8 @@ function playRound(){
 
 }
  
-
-const para = document.createElement("p");
-
-para.appendChild(node);
-const element = document.getElementById("div1");
-element.appendChild(para);
-
-const btn = document.querySelector("#btn");
-btn.addEventListener("click", playRound);
+function addToConsole(y){
+    toString(y);
+    div.textContent = y + content;
+    var content = div.textContent;
+}

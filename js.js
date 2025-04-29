@@ -68,7 +68,15 @@ function determineOutcome(computerselection, humanselection){
         addToConsole("Paper beats rock, Player wins!!");
         humanScore++;
     }
-    else if (humanselection != "rock" && humanselection != "paper" && humanselection != "scissors"){
+    else if(humanselection === "glock"){
+        addToConsole("Glock beats everything. Player wins. But at what cost?");
+        humanScore++;
+    }
+    else if(humanselection === "ur mom"){
+        addToConsole("That can't be right, ur mom is right here, with me.")
+        addToConsole("My score: 10/10");
+    }
+    else if (humanselection != "rock" && humanselection != "paper" && humanselection != "scissors" && humanselection != "glock"){
         addToConsole("Thats not an option, try again");
         playRound();
     }

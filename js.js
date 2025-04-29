@@ -76,7 +76,11 @@ function determineOutcome(computerselection, humanselection){
         addToConsole("That can't be right, ur mom is right here, with me.")
         addToConsole("My score: 10/10");
     }
-    else if (humanselection != "rock" && humanselection != "paper" && humanselection != "scissors" && humanselection != "glock"){
+    else if (humanselection === "fk u"){
+        alert("That is not respectful, responsible, or safe. Go do your work.");
+        window.open("https://royaloakschools.instructure.com/", "_blank");
+    }
+    else if (humanselection != "rock" && humanselection != "paper" && humanselection != "scissors" && humanselection != "glock" && humanselection != "ur mom" && humanselection != "fk u" && humanselection != "tree" && humanselection != "axe"){
         addToConsole("Thats not an option, try again");
         playRound();
     }

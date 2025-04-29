@@ -33,44 +33,44 @@ function getHumanChoice(){
 
 function determineOutcome(computerselection, humanselection){
      if(computerselection === "paper" && humanselection=== "paper"){
-        console.log("Paper vs paper, it's a tie!");
+        addToConsole("Paper vs paper, it's a tie!");
     }
     else if(computerselection === "rock" && humanselection === "rock"){
-        console.log("Rock vs rock, it's a tie!");
+        addToConsole("Rock vs rock, it's a tie!");
     }
     else if(computerselection === "scissors" && humanselection === "scissors"){
-        console.log("Scissors vs scissors, it's a tie!");
+        addToConsole("Scissors vs scissors, it's a tie!");
     }
     else if(computerselection === "scissors" && humanselection === "rock"){
-        console.log("rock beats scissors, Player wins!!");
+        addToConsole("rock beats scissors, Player wins!!");
         humanScore++;
     }
     else if(computerselection === "scissors" && humanselection === "paper"){
-        console.log("Scissors beats paper, Computer wins!!");
+        addToConsole("Scissors beats paper, Computer wins!!");
         computerScore++;
     }
     else if(computerselection === "paper" && humanselection === "scissors"){
-        console.log("Scissors beats paper, Player wins!!");
+        addToConsole("Scissors beats paper, Player wins!!");
         humanScore++;
     }
     else if(computerselection === "paper" && humanselection === "rock"){
-        console.log("Paper beats rock, Computer wins!!");
+        addToConsole("Paper beats rock, Computer wins!!");
         computerScore++;
     }
     else if(computerselection === "rock" && humanselection === "scissors"){
-        console.log("Rock beats scissors, Computer wins!!");
+        addToConsole("Rock beats scissors, Computer wins!!");
         computerScore++;
     }
     else if(computerselection === "rock" && humanselection === "paper"){
-        console.log("Paper beats rock, Player wins!!");
+        addToConsole("Paper beats rock, Player wins!!");
         humanScore++;
     }
     else if (humanselection != "rock" && humanselection != "paper" && humanselection != "scissors"){
-        console.log("Thats not an option, try again");
+        addToConsole("Thats not an option, try again");
         playRound();
     }
-    console.log("Your score: " + humanScore);
-    console.log("Computer score: " +    computerScore);
+    addToConsole("Your score: " + humanScore);
+    addToConsole("Computer score: " +    computerScore);
 }
 
 
@@ -81,15 +81,15 @@ function determineOutcome(computerselection, humanselection){
     playRound();
     playRound();
     if(humanScore >  computerScore){
-        console.log("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
+        addToConsole("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
 
     }
     if(computerScore>humanScore){
-        console.log("Computer wins! womp womp you suck");
+        addToConsole("Computer wins! womp womp you suck");
     
     }
     if (computerScore === humanScore){
-        console.log("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
+        addToConsole("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
     }
 }
 */
@@ -102,15 +102,15 @@ function playRound(){
     }
     else{
         if(humanScore >  computerScore){
-            console.log("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
+            addToConsole("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
     
         }
         if(computerScore>humanScore){
-            console.log("Computer wins! womp womp you suck");
+            addToConsole("Computer wins! womp womp you suck");
         
         }
         if (computerScore === humanScore){
-            console.log("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
+            addToConsole("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
         }
     }
 

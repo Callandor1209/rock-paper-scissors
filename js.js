@@ -8,6 +8,7 @@ btn.addEventListener("click", playRound);
 
 function getComputerChoice(){
     x = Math.random();
+    addToConsole(x);
     if(x>0.66){
        var computerChoice="paper";
     }
@@ -17,7 +18,7 @@ function getComputerChoice(){
     if(x<=0.33){
         var computerChoice="scissors";
     }
-    console.log("Computer chose: " + computerChoice);
+    addToConsole("Computer chose: " + computerChoice);
     return computerChoice;
 }
 
@@ -25,7 +26,7 @@ function getComputerChoice(){
 function getHumanChoice(){
    var humanChoice = prompt("Please input your decision");
      var humanChoice = humanChoice.toLowerCase();
-    console.log("Human chose: " + humanChoice);
+    addToConsole("Human chose: " + humanChoice);
     return humanChoice;
 }
 

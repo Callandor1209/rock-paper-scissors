@@ -113,12 +113,11 @@ function playRound(){
 }
  
 function addToConsole(y){
-    toString(y);
-    var console = console + y;
-    toString(console);
-    cnsl.textcontent = console;
+const para = document.createElement("p");
+const node = document.createTextNode(y);
+para.appendChild(node);
+const element = document.getElementById("div1");
+element.appendChild(para);
 }
 const btn = document.querySelector("#btn");
 btn.addEventListener("click", playRound);
-const cnsl = document.querySelector("#cnsl");
-var console;

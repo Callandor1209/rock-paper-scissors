@@ -35,7 +35,55 @@ function getHumanChoice(){
 
 
 function determineOutcome(computerselection, humanselection){
-     if(computerselection === "paper" && humanselection=== "paper"){
+    var computerselection = {
+        A: "rock",
+        B: "paper",
+        C: "scissors",
+    }
+    var humanselection = {
+        A: "rock",
+        B: "paper",
+        C: "scissors"
+    }
+    switch(computerselection | humanselection) {
+        case computerselection === humanselection:
+            addToConsole("Its a tie!");
+            break;
+        case humanselection.A:
+            if(computerselection.B){
+                addToConsole("Rock beats scissors, Computer wins!!");
+                computerScore++;
+            }
+            if (computerselection.C) {
+                addToConsole("rock beats scissors, Player wins!!");
+                humanScore++;
+            }
+            break;
+        case humanselection.B:
+            if(computerselection.C){
+                addToConsole("Scissors beats paper, Computer wins!!");
+                computerScore++;
+                 }
+            if (computerselection.A) {
+                addToConsole("Paper beats rock, Player wins!!");
+                humanScore++;
+            }
+            break;
+        case humanselection.C:
+             if(computerselection.A){
+                    addToConsole("Rock beats scissors, Computer wins!!");
+                    computerScore++;
+                     }
+             if (computerselection.B) {
+                    addToConsole("Scissors beats paper, Player wins!!");
+                    humanScore++;
+                }
+             break;
+        }
+        addToConsole("Your score: " + humanScore);
+        addToConsole("Computer score: " +    computerScore);
+    }
+     /*if(computerselection === "paper" && humanselection=== "paper"){
         addToConsole("Paper vs paper, it's a tie!");
     }
     else if(computerselection === "rock" && humanselection === "rock"){
@@ -86,7 +134,7 @@ function determineOutcome(computerselection, humanselection){
     }
     addToConsole("Your score: " + humanScore);
     addToConsole("Computer score: " +    computerScore);
-}
+}*/
 
 function playRound(){
     if(i <= 5){

@@ -35,11 +35,10 @@ function getHumanChoice(){
 
 
 function determineOutcome(computerselection, humanselection){
-    switch(humanselection | computerselection) {
-        case computerselection === humanselection:
+        if (computerselection === humanselection){
             addToConsole("Its a tie!");
-            break;
-        case humanselection === "rock":
+        }
+        else if (humanselection === "rock"){
             if(computerselection === "paper"){
                 addToConsole("Rock beats scissors, Computer wins!!");
                 computerScore++;
@@ -48,28 +47,29 @@ function determineOutcome(computerselection, humanselection){
                 addToConsole("rock beats scissors, Player wins!!");
                 humanScore++;
             }
-            break;
-        case humanselection === "paper":
+        }
+        else if (humanselection === "paper"){
             if(computerselection === "scissors"){
                 addToConsole("Scissors beats paper, Computer wins!!");
                 computerScore++;
-                 }
+             }
             if (computerselection === "rock") {
                 addToConsole("Paper beats rock, Player wins!!");
                 humanScore++;
             }
-            break;
-        case humanselection === "scissors":
+        }   
+        else if (humanselection === "scissors"){
              if(computerselection === "rock"){
                     addToConsole("Rock beats scissors, Computer wins!!");
                     computerScore++;
-                     }
+                }
              if (computerselection === "paper") {
                     addToConsole("Scissors beats paper, Player wins!!");
                     humanScore++;
                 }
-             break;
         }
+             
+        
         addToConsole("Your score: " + humanScore);
         addToConsole("Computer score: " +    computerScore);
     }

@@ -45,7 +45,7 @@ function determineOutcome(computerselection, humanselection){
         B: "paper",
         C: "scissors"
     }
-    switch(computerselection | humanselection) {
+    switch( humanselection) {
         case computerselection === humanselection:
             addToConsole("Its a tie!");
             break;
@@ -126,8 +126,7 @@ function determineOutcome(computerselection, humanselection){
     }
     else if (humanselection === "fk u"){
         alert("That is not respectful, responsible, or safe. Go do your work.");
-        window.open("https://royaloakschools.instructure.com/", "_blank");
-    }
+        addToConsole("What is the summary of this paragraph:" + ) 
     else if (humanselection != "rock" && humanselection != "paper" && humanselection != "scissors" && humanselection != "glock" && humanselection != "ur mom" && humanselection != "fk u" && humanselection != "tree" && humanselection != "axe"){
         addToConsole("Thats not an option, try again");
         playRound();

@@ -43,7 +43,7 @@ function determineOutcome(computerselection, humanselection){
     var humanselection = {
         A: "rock",
         B: "paper",
-        C: "scissors"
+        C: "scissors",
     }
     switch( humanselection) {
         case computerselection === humanselection:

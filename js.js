@@ -1,6 +1,5 @@
 var humanScore = 0;
 var computerScore = 0;
-var i = 1;
 const div = document.createElement("div")
 var content;
 const btn = document.querySelector("#btn");
@@ -9,6 +8,9 @@ const reset = document.querySelector("#reset");
 reset.addEventListener("click",reset1);
 const darkm = document.querySelector("#drkmode");
 darkm.addEventListener("click" , darkMode);
+var roundcounter = 0 ;
+var lizardspock = "disabled"
+
 
 function getComputerChoice(){
     x = Math.random();
@@ -21,6 +23,7 @@ function getComputerChoice(){
     if(x<=0.33){
         var computerChoice="scissors";
     }
+
     addToConsole("Computer chose: " + computerChoice);
     return computerChoice;
 }
@@ -29,6 +32,7 @@ function getComputerChoice(){
 function getHumanChoice(){
    var humanChoice = prompt("Please input your decision");
      var humanChoice = humanChoice.toLowerCase();
+     var humanChoice = humanChoice.replaceAll(" " , "");
     addToConsole("Human chose: " + humanChoice);
     return humanChoice;
 }
@@ -73,66 +77,23 @@ function determineOutcome(computerselection, humanselection){
         addToConsole("Your score: " + humanScore);
         addToConsole("Computer score: " +    computerScore);
     }
-     /*if(computerselection === "paper" && humanselection=== "paper"){
-        addToConsole("Paper vs paper, it's a tie!");
-    }
-    else if(computerselection === "rock" && humanselection === "rock"){
-        addToConsole("Rock vs rock, it's a tie!");
-    }
-    else if(computerselection === "scissors" && humanselection === "scissors"){
-        addToConsole("Scissors vs scissors, it's a tie!");
-    }
-    else if(computerselection === "scissors" && humanselection === "rock"){
-        addToConsole("rock beats scissors, Player wins!!");
-        humanScore++;
-    }
-    else if(computerselection === "scissors" && humanselection === "paper"){
-        addToConsole("Scissors beats paper, Computer wins!!");
-        computerScore++;
-    }
-    else if(computerselection === "paper" && humanselection === "scissors"){
-        addToConsole("Scissors beats paper, Player wins!!");
-        humanScore++;
-    }
-    else if(computerselection === "paper" && humanselection === "rock"){
-        addToConsole("Paper beats rock, Computer wins!!");
-        computerScore++;
-    }
-    else if(computerselection === "rock" && humanselection === "scissors"){
-        addToConsole("Rock beats scissors, Computer wins!!");
-        computerScore++;
-    }
-    else if(computerselection === "rock" && humanselection === "paper"){
-        addToConsole("Paper beats rock, Player wins!!");
-        humanScore++;
-    }
-    else if(humanselection === "glock"){
-        addToConsole("Glock beats everything. Player wins. But at what cost?");
-        humanScore++;
-    }
-    else if(humanselection === "ur mom"){
-        addToConsole("That can't be right, ur mom is right here, with me.")
-        addToConsole("My score: 10/10");
-    }
-    else if (humanselection === "fk u"){
-        alert("That is not respectful, responsible, or safe. Go do your work.");
-        addToConsole("What is the summary of this paragraph:" + ) 
-    else if (humanselection != "rock" && humanselection != "paper" && humanselection != "scissors" && humanselection != "glock" && humanselection != "ur mom" && humanselection != "fk u" && humanselection != "tree" && humanselection != "axe"){
-        addToConsole("Thats not an option, try again");
-        playRound();
-    }
-    addToConsole("Your score: " + humanScore);
-    addToConsole("Computer score: " +    computerScore);
-}*/
+
 
 function playRound(){
-    if(i <= 5){
+    if(roundcounter <= 30){
     var humanselection = getHumanChoice();
     var computerselection = getComputerChoice();
     determineOutcome(computerselection , humanselection);
-    i++;
+    roundcounter++;
+    if(roundcounter === 4){
+        alert("Two new options have become avalible, lizard and spock")
+        var lizardspock = "enabled";
     }
-    else if ( i === 6){
+    }
+    else if (roundcounter <= 4){
+        var humansel
+    }
+    else if ( roundcounter === 6){
         if(humanScore >  computerScore){
             addToConsole("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
     
@@ -144,13 +105,17 @@ function playRound(){
         if (computerScore === humanScore){
             addToConsole("You tied, which means you are neither good nor bad! Enjoy mediocracy.")
         }
-        i++;
+        roundcounter++;
     }
-    else if (i > 6){
+    else if (roundcounter > 6){
         addToConsole("Please use the reset button to play again");
     }
 
 }
+
+
+
+
 function reset1(){
    location.reload();
 }

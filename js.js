@@ -177,7 +177,7 @@ function playRound(){
     determineOutcome(computerselection , humanselection);
     roundcounter++;
     var randomizePossible = Math.random();
-    if (randomizePossible >= 0.60){
+    if (randomizePossible >= 0.90){
         randomized="enabled"
     }
     else if(roundcounter <=10 && randomized ==="enabled"){

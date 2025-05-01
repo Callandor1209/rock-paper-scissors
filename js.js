@@ -170,17 +170,20 @@ function determineOutcome(computerselection, humanselection){
 
 
 function playRound(){
-    if(roundcounter <= 10 && randomized === "disabled"){
+    if(roundcounter <= 10 ){
+    switch(randomized){
+    case "disabled":
         alert("all is well.")
-    var humanselection = getHumanChoice();
-    var computerselection = getComputerChoice();
-    determineOutcome(computerselection , humanselection);
-    roundcounter++;
-    var randomizePossible = Math.random();
-    if (randomizePossible >= 0.90){
+         var humanselection = getHumanChoice();
+        var computerselection = getComputerChoice();
+        determineOutcome(computerselection , humanselection);
+        roundcounter++;
+         var randomizePossible = Math.random();
+         if (randomizePossible >= 0.90){
         randomized="enabled"
-    }
-    else if(roundcounter <=10 && randomized ==="enabled"){
+         }
+         break;
+    case "enabled":
         alert("Oh no, due to events in the quantum realm, the results have become randomized!")
         var humanselection = getHumanChoice();
         var computerselection = getComputerChoice();
@@ -196,12 +199,14 @@ function playRound(){
             randomized="disabled";
         }
         roundcounter++
+        break;
     }
+}
     if(roundcounter === 4){
         alert("Two new options have become avalible, lizard and spock")
         lizardspock = "enabled";
     }
-    }
+
     else if ( roundcounter === 11){
         if(humanScore >  computerScore){
             addToConsole("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");

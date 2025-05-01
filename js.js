@@ -173,7 +173,6 @@ function playRound(){
     if(roundcounter <= 10 ){
     switch(randomized){
     case "disabled":
-        alert("all is well.")
          var humanselection = getHumanChoice();
         var computerselection = getComputerChoice();
         determineOutcome(computerselection , humanselection);
@@ -184,7 +183,7 @@ function playRound(){
          }
          break;
     case "enabled":
-        alert("Oh no, due to events in the quantum realm, the results have become randomized!")
+        alert("Oh no, due to unforseen events in the quantum realm, the results have become randomized!")
         var humanselection = getHumanChoice();
         var computerselection = getComputerChoice();
         var z = Math.random();
@@ -203,8 +202,12 @@ function playRound(){
     }
 }
     if(roundcounter === 4){
-        alert("Two new options have become avalible, lizard and spock")
+        alert("Two new options have become avalible, lizard and spock");
         lizardspock = "enabled";
+    }
+    if(roundcounter===7){
+        alert("Once again your repertoire has expanded. New options avalible: glock,medic");
+        glockmedic ="enabled";
     }
 
     else if ( roundcounter === 11){

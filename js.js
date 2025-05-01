@@ -14,7 +14,10 @@ var lizardspock = "disabled"
 
 function getComputerChoice(){
     x = Math.random();
-    if(x>0.66){
+
+    switch (lizardspock){ 
+    case "disabled" :
+        if(x>0.66){
        var computerChoice="paper";
     }
     if(x>0.33 && x<=0.66){
@@ -23,9 +26,30 @@ function getComputerChoice(){
     if(x<=0.33){
         var computerChoice="scissors";
     }
+    break;
+   
+    case"enabled":
+    if(x>0.80){
+        var computerChoice="lizard";
+     }
+     if(x<=0.80 && x>0.60){
+         var computerChoice="spock";
+     }
+     if(x<=0.60 && x>0.40){
+         var computerChoice="scissors";
+     }    
+      if(x<=0.40 && x>0.20){
+        var computerChoice="paper";
+     }
+     if(x<=0.20){
+         var computerChoice="rock";
+     }
+     break;
+    }
 
     addToConsole("Computer chose: " + computerChoice);
     return computerChoice;
+    
 }
 
 
@@ -51,6 +75,14 @@ function determineOutcome(computerselection, humanselection){
                 addToConsole("rock beats scissors, Player wins!!");
                 humanScore++;
             }
+            if(computerselection === "spock") {
+                addToConsole("Spock beats rock, Computer wins!!");
+                computerScore++
+            }
+            if(computerselection === "lizard") {
+                addToConsole("Rock beats lizard, Player wins!!");
+                humanScore++
+            }
         }
         else if (humanselection === "paper"){
             if(computerselection === "scissors"){
@@ -61,7 +93,16 @@ function determineOutcome(computerselection, humanselection){
                 addToConsole("Paper beats rock, Player wins!!");
                 humanScore++;
             }
-        }   
+            if(computerselection === "lizard") {
+                addToConsole("Lizard beats paper, Computer wins!!");
+                computerScore++
+            }
+            if(computerselection === "spock") {
+                addToConsole("Paper beats spock, Player wins!!");
+                humanScore++
+            }
+        }
+ 
         else if (humanselection === "scissors"){
              if(computerselection === "rock"){
                     addToConsole("Rock beats scissors, Computer wins!!");
@@ -71,6 +112,54 @@ function determineOutcome(computerselection, humanselection){
                     addToConsole("Scissors beats paper, Player wins!!");
                     humanScore++;
                 }
+            if(computerselection === "spock") {
+                addToConsole("Spock beats scissors, Computer wins!!");
+                computerScore++
+            }
+            if(computerselection === "lizard") {
+                addToConsole("Scissors beats Lizard, Player wins!!");
+                humanScore++
+            }
+        }
+        else if(humanselection==="spock" && lizardspock==="enabled"){
+            if(computerselection === "scissors"){
+                addToConsole("Spock beats scissors, Player wins!!");
+                humanScore++;
+            }
+         if (computerselection === "rock") {
+                addToConsole("Spock beats rock, Player wins!!");
+                humanScore++;
+            }
+            if(computerselection === "paper"){
+                addToConsole("Paper beats spock, Computer wins!!");
+                computerScore++;
+            }
+         if (computerselection === "lizard") {
+                addToConsole("Lizard beats spock, Player wins!!");
+                computerScore++;
+            }
+        }
+        else if(humanselection==="lizard" && lizardspock==="enabled"){
+            if(computerselection === "spock"){
+                addToConsole("Lizard beats spock, Player wins!!");
+                humanScore++;
+            }
+         if (computerselection === "paper") {
+                addToConsole("Lizard beats paper, Player wins!!");
+                humanScore++;
+            }
+            if(computerselection === "rock"){
+                addToConsole("Rock beats lizard, Computer wins!!");
+                computerScore++;
+            }
+         if (computerselection === "scissors") {
+                addToConsole("Scissors beats lizard, Player wins!!");
+                computerScore++;
+            }
+        }
+        else{
+            addToConsole("That is not an input, please try again.");
+            roundcounter--;
         }
              
         
@@ -87,7 +176,7 @@ function playRound(){
     roundcounter++;
     if(roundcounter === 4){
         alert("Two new options have become avalible, lizard and spock")
-        var lizardspock = "enabled";
+        lizardspock = "enabled";
     }
     }
     else if (roundcounter <= 4){

@@ -10,7 +10,7 @@ const darkm = document.querySelector("#drkmode");
 darkm.addEventListener("click" , darkMode);
 var roundcounter = 0 ;
 var lizardspock = "disabled"
-var randomized = "disabed"
+var randomized = "disabled"
 
 
 function getComputerChoice(){

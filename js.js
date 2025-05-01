@@ -162,7 +162,7 @@ function determineOutcome(computerselection, humanselection){
         }
         else if (humanselection==="glock" && glockrun === "enabled"){
             alert("You win, but you now have 20 seconds to play 'run away' or the police catch you and computer wins");
-            glock==="enabled";
+            glock="enabled";
             humanScore++;
         }
         else if(humanselection==="runaway" && glockrun === "enabled" && glock==="disabled"){
@@ -230,7 +230,7 @@ function playRound(){
     }
     if(roundcounter===7){
         alert("Once again your repertoire has expanded. New options avalible: glock, run away");
-        glockmedic ="enabled";
+        glockrun ="enabled";
     }
 
     else if ( roundcounter === 25){

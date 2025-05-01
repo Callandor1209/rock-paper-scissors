@@ -14,7 +14,8 @@ var randomized = "disabled";
 var glockrun ="disabled";
 var glock = "disabled";
 var countdownstatus = "disabled;"
-var sec = 20;
+var sec = 10;
+var message;
 
 
 function getComputerChoice(){
@@ -180,7 +181,7 @@ function determineOutcome(computerselection, humanselection){
             }
             else{
                 alert("The police are still chasing you. Timer reset.")
-                sec = 20;
+                sec = 10;
             }
             computerScore++;
         }
@@ -223,6 +224,8 @@ function playRound(){
             humanScore++;
             randomized="disabled";
         }
+        addToConsole("Your score: " + humanScore);
+        addToConsole("Computer score: " +    computerScore);
         roundcounter++
         break;
     }
@@ -231,8 +234,8 @@ function playRound(){
         alert("Two new options have become avalible, lizard and spock");
         lizardspock = "enabled";
     }
-    if(roundcounter===1){
-        alert("Once again your repertoire has expanded. New options avalible: glock, run away");
+    if(roundcounter===8){
+        alert("Once again your repertoire has expanded. New option avalible: glock");
         glockrun ="enabled";
     }
 
@@ -253,6 +256,7 @@ function playRound(){
     else if (roundcounter > 25){
         addToConsole("Please use the reset button to play again");
     }
+    actuallyAdd(message);
 
 }
 
@@ -269,7 +273,6 @@ function timer(){
             reset1();
             return;
         }
-        console.log(sec)
         setTimeout(timer,1000);
        
     }
@@ -281,9 +284,15 @@ function timer(){
 function reset1(){
    location.reload();
 }
-function addToConsole(message){
+function addToConsole(message3){
+    message= message3 +'\n' + message;
+    
+}
+
+function actuallyAdd(message2){
     const output = document.getElementById("output");
-    output.textContent = message + '\n' + output.textContent ;
+    output.textContent = message2 + '\n' +'\n' + output.textContent ;
+    message = "";
 }
 function darkMode(){
     var element = document.body;

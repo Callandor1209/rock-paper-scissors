@@ -2,3 +2,8 @@
     background-color: rgb(46, 45, 45);
     color: white;
 }
+.timer{
+    font-weight: 300;
+    font-size: large;
+    color: red;
+}

@@ -13,6 +13,7 @@ var lizardspock = "disabled";
 var randomized = "disabled";
 var glockrun ="disabled";
 var glock = "disabled";
+var countdownstatus = "disabled;"
 var sec = 20;
 
 
@@ -164,6 +165,7 @@ function determineOutcome(computerselection, humanselection){
         else if (humanselection==="glock" && glockrun === "enabled"){
             alert("You win, but you now have 20 seconds to play 'run away' or the police catch you and computer wins");
             glock="enabled";
+            startCountdown();
             humanScore++;
         }
         else if(humanselection==="runaway" && glockrun === "enabled" && glock==="disabled"){
@@ -229,7 +231,7 @@ function playRound(){
         alert("Two new options have become avalible, lizard and spock");
         lizardspock = "enabled";
     }
-    if(roundcounter===7){
+    if(roundcounter===1){
         alert("Once again your repertoire has expanded. New options avalible: glock, run away");
         glockrun ="enabled";
     }
@@ -253,18 +255,27 @@ function playRound(){
     }
 
 }
+
+function startCountdown(){
+    countdownstatus= "enabled";
+    timer();
+}
 function timer(){
-    document.getElementById('timerdisplay').innerHTML='00:'+sec;
+    if(countdownstatus = "enabled"){
+    document.getElementById("timerdisplay").textContent="00:"+sec;
         sec--;
         if(sec === 0){
+            countdownstatus = "disabled";
             reset1();
+            return;
         }
-
+        console.log(sec)
+        setTimeout(timer,1000);
+       
+    }
 }
 
-while(glock==="enabled"){
-    setInterval(timer(),1000);
-}
+
 
 
 function reset1(){

@@ -11,7 +11,8 @@ darkm.addEventListener("click" , darkMode);
 var roundcounter = 0 ;
 var lizardspock = "disabled";
 var randomized = "disabled";
-var glockmedic ="disabled";
+var glockrun ="disabled";
+var glock = "disabled";
 var sec = 20;
 
 

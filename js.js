@@ -9,8 +9,10 @@ reset.addEventListener("click",reset1);
 const darkm = document.querySelector("#drkmode");
 darkm.addEventListener("click" , darkMode);
 var roundcounter = 0 ;
-var lizardspock = "disabled"
-var randomized = "disabled"
+var lizardspock = "disabled";
+var randomized = "disabled";
+var glockmedic ="disabled";
+var sec = 20;
 
 
 function getComputerChoice(){
@@ -158,6 +160,27 @@ function determineOutcome(computerselection, humanselection){
                 computerScore++;
             }
         }
+        else if (humanselection==="glock" && glockrun === "enabled"){
+            alert("You win, but you now have 20 seconds to play 'run away' or the police catch you and computer wins");
+            glock==="enabled";
+            humanScore++;
+        }
+        else if(humanselection==="runaway" && glockrun === "enabled" && glock==="disabled"){
+            alert("You run away and the computer wins");
+            computerScore++;
+        }
+        else if(humanselection==="runaway" && glockrun === "enabled" && glock==="enabled"){
+            alert("You run away and the computer wins");
+            var a = Math.random();
+            if(a>0.80){
+                alert("The police have stopped chasing you!")
+            }
+            else{
+                alert("The police are still chasing you. Timer reset.")
+                sec = 20;
+            }
+            computerScore++;
+        }
         else{
             addToConsole("That is not an input, please try again.");
             roundcounter--;
@@ -168,10 +191,11 @@ function determineOutcome(computerselection, humanselection){
         addToConsole("Computer score: " +    computerScore);
     }
 
-
+ while(glock==="enabled")
 function playRound(){
-    if(roundcounter <= 10 ){
+    if(roundcounter <= 24 ){
     switch(randomized){
+
     case "disabled":
          var humanselection = getHumanChoice();
         var computerselection = getComputerChoice();
@@ -183,7 +207,7 @@ function playRound(){
          }
          break;
     case "enabled":
-        alert("Oh no, due to unforseen events in the quantum realm, the results have become randomized!")
+        alert("Oh no, due to unforseen events in the quantum realm, the results have become randomized for one round!")
         var humanselection = getHumanChoice();
         var computerselection = getComputerChoice();
         var z = Math.random();
@@ -206,11 +230,11 @@ function playRound(){
         lizardspock = "enabled";
     }
     if(roundcounter===7){
-        alert("Once again your repertoire has expanded. New options avalible: glock,medic");
+        alert("Once again your repertoire has expanded. New options avalible: glock, run away");
         glockmedic ="enabled";
     }
 
-    else if ( roundcounter === 11){
+    else if ( roundcounter === 25){
         if(humanScore >  computerScore){
             addToConsole("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
     
@@ -224,13 +248,23 @@ function playRound(){
         }
         roundcounter++;
     }
-    else if (roundcounter > 11){
+    else if (roundcounter > 25){
         addToConsole("Please use the reset button to play again");
     }
 
 }
+function timer(){
+    document.getElementById('timerdisplay').innerHTML='00:'+sec;
+        sec--;
+        if(sec === 0){
+            reset1();
+        }
 
+}
 
+while(glock==="enabled"){
+    setInterval(timer(),1000);
+}
 
 
 function reset1(){

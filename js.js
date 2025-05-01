@@ -271,7 +271,7 @@ function reset1(){
 }
 function addToConsole(message){
     const output = document.getElementById("output");
-    output.textContent += message + '\n';
+    output.textContent = message + '\n' + output.textContent;
 }
 function darkMode(){
     var element = document.body;

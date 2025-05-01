@@ -10,6 +10,7 @@ const darkm = document.querySelector("#drkmode");
 darkm.addEventListener("click" , darkMode);
 var roundcounter = 0 ;
 var lizardspock = "disabled"
+var randomized = "disabed"
 
 
 function getComputerChoice(){
@@ -169,11 +170,14 @@ function determineOutcome(computerselection, humanselection){
 
 
 function playRound(){
-    if(roundcounter <= 10){
+    if(roundcounter <= 10 && randomized === "disabled"){
     var humanselection = getHumanChoice();
     var computerselection = getComputerChoice();
     determineOutcome(computerselection , humanselection);
     roundcounter++;
+    if(roundcounter <=10 && randomized ==="enabled"){
+        
+    }
     if(roundcounter === 4){
         alert("Two new options have become avalible, lizard and spock")
         lizardspock = "enabled";

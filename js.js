@@ -171,12 +171,30 @@ function determineOutcome(computerselection, humanselection){
 
 function playRound(){
     if(roundcounter <= 10 && randomized === "disabled"){
+        alert("all is well.")
     var humanselection = getHumanChoice();
     var computerselection = getComputerChoice();
     determineOutcome(computerselection , humanselection);
     roundcounter++;
+    var randomizePossible = Math.random();
+    if (randomizePossible >= 0.60){
+        randomized="enabled"
+    }
     if(roundcounter <=10 && randomized ==="enabled"){
-        
+        alert("Oh no, due to events in the quantum realm, the results have become randomized!")
+        var humanselection = getHumanChoice();
+        var computerselection = getComputerChoice();
+        var z = Math.random();
+        if (z >= 0.50){
+            addToConsole(computerselection + "beats" + humanselection + "," + "computer wins!!");
+            computerScore++;
+            randomized="disabled";
+        }
+        else{
+            addToConsole(humanselection + "beats" + computerselection + "," + "human wins!!");
+            humanScore++;
+            randomized="disabled";
+        }
     }
     if(roundcounter === 4){
         alert("Two new options have become avalible, lizard and spock")

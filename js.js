@@ -8,12 +8,15 @@ const reset = document.querySelector("#reset");
 reset.addEventListener("click",reset1);
 const darkm = document.querySelector("#drkmode");
 darkm.addEventListener("click" , darkMode);
+const compscore = document.querySelector("#compscore");
+const playerscore = document.querySelector("#playerscore");
+const rndcounter = document.querySelector("#roundcounter");
 var roundcounter = 0 ;
 var lizardspock = "disabled";
 var randomized = "disabled";
 var glockrun ="disabled";
 var glock = "disabled";
-var countdownstatus = "disabled;"
+var countdownstatus = "disabled"
 var sec = 10;
 var message;
 
@@ -177,7 +180,10 @@ function determineOutcome(computerselection, humanselection){
             alert("You run away and the computer wins");
             var a = Math.random();
             if(a>0.80){
-                alert("The police have stopped chasing you!")
+                alert("The police have stopped chasing you! Glock has been removed from options.")
+                countdownstatus = "disabled"
+                 glock = "disabled";
+                 glockrun = "disabled"
             }
             else{
                 alert("The police are still chasing you. Timer reset.")
@@ -190,9 +196,7 @@ function determineOutcome(computerselection, humanselection){
             roundcounter--;
         }
              
-        
-        addToConsole("Your score: " + humanScore);
-        addToConsole("Computer score: " +    computerScore);
+      
     }
 
 function playRound(){
@@ -256,6 +260,10 @@ function playRound(){
     else if (roundcounter > 25){
         addToConsole("Please use the reset button to play again");
     }
+      
+    playerscore.textContent = "Your score: " + humanScore;
+    compscore.textContent = "Computer score: " + computerScore;
+    rndcounter.textContent = "Round: " + roundcounter;
     actuallyAdd(message);
 
 }
@@ -265,7 +273,7 @@ function startCountdown(){
     timer();
 }
 function timer(){
-    if(countdownstatus = "enabled"){
+    if(countdownstatus === "enabled" ){
     document.getElementById("timerdisplay").textContent="00:"+sec;
         sec--;
         if(sec === 0){
@@ -276,7 +284,12 @@ function timer(){
         setTimeout(timer,1000);
        
     }
+    else{
+        document.getElementById("timerdisplay").textContent="";
+        return;
+    }
 }
+
 
 
 
@@ -290,8 +303,10 @@ function addToConsole(message3){
 }
 
 function actuallyAdd(message2){
-    const output = document.getElementById("output");
-    output.textContent = message2 + '\n' +'\n' + output.textContent ;
+    const all = document.getElementById("all");
+    var newP = document.createElement('p');
+    newP.textContent = message2;
+    all.appendChild(newP);
     message = "";
 }
 function darkMode(){

@@ -7,3 +7,29 @@
     font-size: large;
     color: red;
 }
+.header{
+background-color: #007896;
+margin-bottom: 0;
+margin-top: 0;
+padding-bottom: .5cm;
+color: white;
+display:flex;
+justify-content: space-around;
+}
+.button{
+    border-radius: 12px;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+}
+.buttons{
+    margin-top: 0.5cm;
+    display: flex;
+    justify-content: space-around;
+}
+.all{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(167, 167, 45);
+}

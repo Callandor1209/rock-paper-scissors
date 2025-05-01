@@ -191,7 +191,6 @@ function determineOutcome(computerselection, humanselection){
         addToConsole("Computer score: " +    computerScore);
     }
 
- while(glock==="enabled")
 function playRound(){
     if(roundcounter <= 24 ){
     switch(randomized){

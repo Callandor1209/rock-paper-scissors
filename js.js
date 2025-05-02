@@ -13,6 +13,7 @@ const playerscore = document.querySelector("#playerscore");
 const rndcounter = document.querySelector("#roundcounter");
 const dropbtn = document.querySelector("#dropbtn");
 dropbtn.addEventListener("click", dropdown);
+const input = document.querySelector("#input");
 var roundcounter = 0 ;
 var lizardspock = "disabled";
 var randomized = "disabled";
@@ -20,7 +21,7 @@ var glockrun ="disabled";
 var glock = "disabled";
 var countdownstatus = "disabled"
 var sec = 10;
-var message;
+var message = "";
 
 
 function getComputerChoice(){
@@ -65,7 +66,7 @@ function getComputerChoice(){
 
 
 function getHumanChoice(){
-   var humanChoice = prompt("Please input your decision");
+   var humanChoice = input.value;
      var humanChoice = humanChoice.toLowerCase();
      var humanChoice = humanChoice.replaceAll(" " , "");
     addToConsole("Human chose: " + humanChoice);

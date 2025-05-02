@@ -67,6 +67,7 @@ function getComputerChoice(){
 
 function getHumanChoice(){
    var humanChoice = input.value;
+   input.value = ""
      var humanChoice = humanChoice.toLowerCase();
      var humanChoice = humanChoice.replaceAll(" " , "");
     addToConsole("Human chose: " + humanChoice);

@@ -68,9 +68,9 @@ function getComputerChoice(){
 function getHumanChoice(){
    var humanChoice = input.value;
    input.value = ""
+   addToConsole("Human chose: " + humanChoice);
      var humanChoice = humanChoice.toLowerCase();
-     var humanChoice = humanChoice.replaceAll(" " , "");
-    addToConsole("Human chose: " + humanChoice);
+     var humanChoice = humanChoice.replaceAll(" " , ""); 
     return humanChoice;
 }
 
@@ -213,7 +213,7 @@ function playRound(){
         determineOutcome(computerselection , humanselection);
         roundcounter++;
          var randomizePossible = Math.random();
-         if (randomizePossible >= 0.90){
+         if (randomizePossible >= 0.00){
         randomized="enabled"
          }
          break;
@@ -235,6 +235,10 @@ function playRound(){
         addToConsole("Your score: " + humanScore);
         addToConsole("Computer score: " +    computerScore);
         roundcounter++
+        if (z>=0.001){
+            alert("Oh no! The unforseen events in the quantum realm have spiraled out of control and the world has been destroyed");
+            reset1();
+        }
         break;
     }
 }

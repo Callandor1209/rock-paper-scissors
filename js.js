@@ -14,6 +14,8 @@ const rndcounter = document.querySelector("#roundcounter");
 const dropbtn = document.querySelector("#dropbtn");
 dropbtn.addEventListener("click", dropdown);
 const input = document.querySelector("#input");
+const output = document.querySelector("#output");
+const new1 = document.querySelector("#new");
 var roundcounter = 0 ;
 var lizardspock = "disabled";
 var randomized = "disabled";
@@ -204,6 +206,10 @@ function determineOutcome(computerselection, humanselection){
     }
 
 function playRound(){
+    if (roundcounter===0){
+        new1.textContent="";
+        output.textContent="";
+    }
     if(roundcounter <= 14 ){
     switch(randomized){
 
@@ -272,7 +278,7 @@ function playRound(){
     playerscore.textContent = "Your score: " + humanScore;
     compscore.textContent = "Computer score: " + computerScore;
     rndcounter.textContent = "Round: " + roundcounter;
-    actuallyAdd(message);
+    addToNew(message);
 
 }
 
@@ -309,11 +315,18 @@ function addToConsole(message3){
     message= message3 +'\n' + message;
     
 }
+function addToNew(message4){
+    var messsage5 = new1.textContent;
+    actuallyAdd(messsage5);
+    message = "";
+    new1.textContent = message4;
+
+}
 
 function actuallyAdd(message2){
-    const output = document.getElementById("output");
     output.textContent = message2 + '\n' +'\n' + output.textContent ;
-    message = "";
+   
+
 }
 
 function dropdown(){

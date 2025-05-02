@@ -213,7 +213,7 @@ function playRound(){
         determineOutcome(computerselection , humanselection);
         roundcounter++;
          var randomizePossible = Math.random();
-         if (randomizePossible >= 0.00){
+         if (randomizePossible >= 0.90){
         randomized="enabled"
          }
          break;
@@ -235,7 +235,7 @@ function playRound(){
         addToConsole("Your score: " + humanScore);
         addToConsole("Computer score: " +    computerScore);
         roundcounter++
-        if (z>=0.001){
+        if (z>=0.995){
             alert("Oh no! The unforseen events in the quantum realm have spiraled out of control and the world has been destroyed");
             reset1();
         }

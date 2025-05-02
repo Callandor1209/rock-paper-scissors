@@ -11,6 +11,8 @@ darkm.addEventListener("click" , darkMode);
 const compscore = document.querySelector("#compscore");
 const playerscore = document.querySelector("#playerscore");
 const rndcounter = document.querySelector("#roundcounter");
+const dropbtn = document.querySelector("#dropbtn");
+dropbtn.addEventListener("click", dropdown);
 var roundcounter = 0 ;
 var lizardspock = "disabled";
 var randomized = "disabled";
@@ -200,7 +202,7 @@ function determineOutcome(computerselection, humanselection){
     }
 
 function playRound(){
-    if(roundcounter <= 24 ){
+    if(roundcounter <= 14 ){
     switch(randomized){
 
     case "disabled":
@@ -243,7 +245,7 @@ function playRound(){
         glockrun ="enabled";
     }
 
-    else if ( roundcounter === 25){
+    else if ( roundcounter === 15){
         if(humanScore >  computerScore){
             addToConsole("Player wins! Congratulations! You have reached the pinacle of Rock Paper Scissors playing! It can only go downhill from here!");
     
@@ -257,7 +259,7 @@ function playRound(){
         }
         roundcounter++;
     }
-    else if (roundcounter > 25){
+    else if (roundcounter > 15){
         addToConsole("Please use the reset button to play again");
     }
       
@@ -303,11 +305,14 @@ function addToConsole(message3){
 }
 
 function actuallyAdd(message2){
-    const all = document.getElementById("all");
-    var newP = document.createElement('p');
-    newP.textContent = message2;
-    all.appendChild(newP);
+    const output = document.getElementById("output");
+    output.textContent = message2 + '\n' +'\n' + output.textContent ;
     message = "";
+}
+
+function dropdown(){
+    document.getElementById("dropdwn").classList.toggle("show");
+
 }
 function darkMode(){
     var element = document.body;

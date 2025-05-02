@@ -15,21 +15,39 @@ padding-bottom: .5cm;
 color: white;
 display:flex;
 justify-content: space-around;
+
 }
 .button{
     border-radius: 12px;
     background-color: green;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
 }
 .buttons{
     margin-top: 0.5cm;
     display: flex;
     justify-content: space-around;
 }
-.all{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: rgb(167, 167, 45);
-}
+.dropdown {
+    position: right;
+    display: inline-block;
+   
+  }
+.dropdown2 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 50px;
+   
+  }
+  .dropbtn{
+    margin-top: 0.5cm;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(41, 41, 41);
+    color: white;
+
+  }
+  .show {display:block;}

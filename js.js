@@ -27,39 +27,50 @@ var sec = 10;
 var message = "";
 
 
-function getComputerChoice(){
+function getComputerChoice()
+{
     x = Math.random();
 
-    switch (lizardspock){ 
-    case "disabled" :
-        if(x>0.66){
-       var computerChoice="paper";
-    }
-    if(x>0.33 && x<=0.66){
-        var computerChoice="rock";
-    }
-    if(x<=0.33){
-        var computerChoice="scissors";
-    }
-    break;
-   
-    case"enabled":
-    if(x>0.80){
-        var computerChoice="lizard";
-     }
-     if(x<=0.80 && x>0.60){
-         var computerChoice="spock";
-     }
-     if(x<=0.60 && x>0.40){
-         var computerChoice="scissors";
-     }    
-      if(x<=0.40 && x>0.20){
-        var computerChoice="paper";
-     }
-     if(x<=0.20){
-         var computerChoice="rock";
-     }
-     break;
+    switch (lizardspock)
+    { 
+        
+            case "disabled" :
+                if(x>0.66)
+                {
+                    var computerChoice="paper";
+                }
+                if(x>0.33 && x<=0.66)
+                {
+                    var computerChoice="rock";
+                }
+                if(x<=0.33)
+                {
+                    var computerChoice="scissors";
+                }
+        break;
+    
+        case"enabled":
+            if(x>0.80)
+            {
+                var computerChoice="lizard";
+            }
+            if(x<=0.80 && x>0.60)
+            {
+                var computerChoice="spock";
+            }
+            if(x<=0.60 && x>0.40)
+            {
+                var computerChoice="scissors";
+            }    
+            if(x<=0.40 && x>0.20)
+            {
+                var computerChoice="paper";
+            }
+            if(x<=0.20)
+            {
+                var computerChoice="rock";
+            }
+        break;
     }
 
     addToConsole("Computer chose: " + computerChoice);
@@ -72,48 +83,59 @@ function getHumanChoice(){
    var humanChoice = input.value;
    input.value = ""
    addToConsole("Human chose: " + humanChoice);
-     var humanChoice = humanChoice.toLowerCase();
-     var humanChoice = humanChoice.replaceAll(" " , ""); 
-    return humanChoice;
+   var humanChoice = humanChoice.toLowerCase();
+   var humanChoice = humanChoice.replaceAll(" " , ""); 
+   return humanChoice;
 }
 
 
 function determineOutcome(computerselection, humanselection){
-        if (computerselection === humanselection){
+        if (computerselection === humanselection)
+        {
             addToConsole("Its a tie!");
         }
-        else if (humanselection === "rock"){
-            if(computerselection === "paper"){
+        else if (humanselection === "rock")
+        {
+            if(computerselection === "paper")
+            {
                 addToConsole("Rock beats scissors, Computer wins!!");
                 computerScore++;
             }
-            if (computerselection === "scissors") {
+            if (computerselection === "scissors") 
+            {
                 addToConsole("rock beats scissors, Player wins!!");
                 humanScore++;
             }
-            if(computerselection === "spock") {
+            if(computerselection === "spock") 
+            {
                 addToConsole("Spock beats rock, Computer wins!!");
                 computerScore++
             }
-            if(computerselection === "lizard") {
+            if(computerselection === "lizard") 
+            {
                 addToConsole("Rock beats lizard, Player wins!!");
                 humanScore++
             }
         }
-        else if (humanselection === "paper"){
-            if(computerselection === "scissors"){
+        else if (humanselection === "paper")
+            {
+            if(computerselection === "scissors")
+            {
                 addToConsole("Scissors beats paper, Computer wins!!");
                 computerScore++;
-             }
-            if (computerselection === "rock") {
+            }
+            if (computerselection === "rock") 
+            {
                 addToConsole("Paper beats rock, Player wins!!");
                 humanScore++;
             }
-            if(computerselection === "lizard") {
+            if(computerselection === "lizard") 
+            {
                 addToConsole("Lizard beats paper, Computer wins!!");
                 computerScore++
             }
-            if(computerselection === "spock") {
+            if(computerselection === "spock") 
+            {
                 addToConsole("Paper beats spock, Player wins!!");
                 humanScore++
             }
@@ -266,7 +288,7 @@ function playRound(){
     
         }
         if(computerScore>humanScore){
-            addToConsole("Computer wins! womp womp you suck");
+            addToConsole("Computer wins! #rigged");
         
         }
         if (computerScore === humanScore){
@@ -335,15 +357,27 @@ function addToNew(message4){
 }
 
 function actuallyAdd(message2){
-    if(roundcounter===0 || notInput==="enabled"){
-        output.textContent=output.textContent;
-    }
-    else{
-    message2 = "Round " + roundcounter + '\n' + message2;
-    output.textContent = message2 + '\n' +'\n' + output.textContent ;
-    }
-   
+    var containsblank=message2.includes("input");
+    switch (containsblank){
+        case true: 
+            if(roundcounter===0 ){
+             output.textContent=output.textContent;
+            }
+            else{
+                output.textContent = message2 + '\n' +'\n' + output.textContent ;
+            }
+         break;
 
+        case false:
+            if(roundcounter===0 ){
+             output.textContent=output.textContent;
+           }
+         else{
+                message2 = "Round " + roundcounter + '\n' + message2;
+                output.textContent = message2 + '\n' +'\n' + output.textContent ;
+              }
+         break;
+    }
 }
 
 function dropdown(){

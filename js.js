@@ -21,7 +21,8 @@ var lizardspock = "disabled";
 var randomized = "disabled";
 var glockrun ="disabled";
 var glock = "disabled";
-var countdownstatus = "disabled"
+var countdownstatus = "disabled";
+var notInput = "disabled";
 var sec = 10;
 var message = "";
 
@@ -173,7 +174,7 @@ function determineOutcome(computerselection, humanselection){
             }
         }
         else if (humanselection==="glock" && glockrun === "enabled"){
-            alert("You win, but you now have 20 seconds to play 'run away' or the police catch you and computer wins");
+            alert("You win, but you now have 10 seconds to play 'run away' or the police catch you and computer wins");
             glock="enabled";
             startCountdown();
             humanScore++;
@@ -199,7 +200,7 @@ function determineOutcome(computerselection, humanselection){
         }
         else{
             addToConsole("That is not an input, please try again.");
-            roundcounter--;
+            notInput="enabled";
         }
              
       
@@ -217,35 +218,37 @@ function playRound(){
          var humanselection = getHumanChoice();
         var computerselection = getComputerChoice();
         determineOutcome(computerselection , humanselection);
-        roundcounter++;
          var randomizePossible = Math.random();
          if (randomizePossible >= 0.90){
         randomized="enabled"
          }
          break;
     case "enabled":
+       
         alert("Oh no, due to unforseen events in the quantum realm, the results have become randomized for one round!")
         var humanselection = getHumanChoice();
         var computerselection = getComputerChoice();
-        var z = Math.random();
-        if (z >= 0.50){
+        switch(notInput){
+            case "enabled":
+                break;
+            default:
+                 var z = Math.random();
+                  if (z >= 0.50){
             addToConsole(computerselection + " beats " + humanselection + "," + "computer wins!!");
             computerScore++;
             randomized="disabled";
         }
-        else{
+              else{
             addToConsole(humanselection + " beats " + computerselection + "," + "human wins!!");
             humanScore++;
             randomized="disabled";
         }
-        addToConsole("Your score: " + humanScore);
-        addToConsole("Computer score: " +    computerScore);
-        roundcounter++
         if (z>=0.995){
             alert("Oh no! The unforseen events in the quantum realm have spiraled out of control and the world has been destroyed");
             reset1();
         }
         break;
+    }
     }
 }
     if(roundcounter === 4){
@@ -279,6 +282,14 @@ function playRound(){
     compscore.textContent = "Computer score: " + computerScore;
     rndcounter.textContent = "Round: " + roundcounter;
     addToNew(message);
+    switch(notInput){
+        case "enabled":
+            notInput="disabled"
+            break;
+        default:
+            roundcounter++;
+            break;
+    }
 
 }
 
@@ -324,7 +335,13 @@ function addToNew(message4){
 }
 
 function actuallyAdd(message2){
+    if(roundcounter===0 || notInput==="enabled"){
+        output.textContent=output.textContent;
+    }
+    else{
+    message2 = "Round " + roundcounter + '\n' + message2;
     output.textContent = message2 + '\n' +'\n' + output.textContent ;
+    }
    
 
 }

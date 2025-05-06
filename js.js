@@ -302,7 +302,9 @@ function playRound(){
       
     playerscore.textContent = "Your score: " + humanScore;
     compscore.textContent = "Computer score: " + computerScore;
+    roundcounter++;
     rndcounter.textContent = "Round: " + roundcounter;
+    roundcounter--;
     addToNew(message);
     switch(notInput){
         case "enabled":

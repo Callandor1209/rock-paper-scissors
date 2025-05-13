@@ -98,12 +98,12 @@ function determineOutcome(computerselection, humanselection){
         {
             if(computerselection === "paper")
             {
-                addToConsole("Rock beats scissors, Computer wins!!");
+                addToConsole("Paper beats rock, Computer wins!!");
                 computerScore++;
             }
             if (computerselection === "scissors") 
             {
-                addToConsole("rock beats scissors, Player wins!!");
+                addToConsole("Rock beats scissors, Player wins!!");
                 humanScore++;
             }
             if(computerselection === "spock") 
@@ -155,7 +155,7 @@ function determineOutcome(computerselection, humanselection){
                 computerScore++
             }
             if(computerselection === "lizard") {
-                addToConsole("Scissors beats Lizard, Player wins!!");
+                addToConsole("Scissors beats lizard, Player wins!!");
                 humanScore++
             }
         }
@@ -278,7 +278,7 @@ function playRound(){
         lizardspock = "enabled";
     }
     if(roundcounter===8){
-        alert("Once again your repertoire has expanded. New option avalible: glock");
+        alert("Once again your repertoire has expanded. New option avalible: Glock");
         glockrun ="enabled";
     }
 

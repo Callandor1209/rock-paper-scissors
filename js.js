@@ -25,6 +25,7 @@ var countdownstatus = "disabled";
 var notInput = "disabled";
 var sec = 10;
 var message = "";
+var onoff;
 
 
 function getComputerChoice() {
@@ -323,7 +324,10 @@ function timer() {
 
 
 function reset1() {
+    onoff = "off";
     location.reload();
+    darkMode();
+
 }
 function addToConsole(message3) {
     message = message3 + '\n' + message;
@@ -368,4 +372,11 @@ function dropdown() {
 function darkMode() {
     var element = document.body;
     element.classList.toggle("dark-mode");
+    console.log(onoff);
+        switch(onoff){
+        case "on":
+            onoff = "off" 
+        case "off":
+            onoff="on";
+    }
 }

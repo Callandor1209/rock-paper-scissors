@@ -76,6 +76,9 @@ function getHumanChoice() {
     addToConsole("Human chose: " + humanChoice);
     var humanChoice = humanChoice.toLowerCase();
     var humanChoice = humanChoice.replaceAll(" ", "");
+    if(humanChoice = ""){
+        humanChoice = "Nothing"
+    }
     return humanChoice;
 }
 
